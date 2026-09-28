@@ -4,6 +4,20 @@ import Profile from "./pages/Profile";
 import Favorites from "./pages/Favorites";
 import { useTheme } from "./context/ThemeContext";
 
+function NotFound() {
+  return (
+    <section>
+      <div className="page-header">
+        <h1>Page not found</h1>
+        <p>The page you are looking for does not exist.</p>
+        <Link className="back-link" to="/">
+          Back to search
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function App() {
   const { theme, toggleTheme } = useTheme();
 
@@ -29,6 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </div>
