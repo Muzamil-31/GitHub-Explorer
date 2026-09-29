@@ -12,7 +12,7 @@ function SearchBar({ onSearch }) {
     if (!value) {
       return;
     }
-
+    
     // Call Home's search function with the entered username.
     onSearch(value);
   };
